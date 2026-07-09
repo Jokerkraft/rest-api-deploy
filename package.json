@@ -27,6 +27,7 @@
     "dev:3": "node --watch clase-2/pokemon/02-express.js"
   },
   "dependencies": {
+    "cors": "2.8.6",
     "express": "5.2.1",
     "picocolors": "1.1.1"
   },
