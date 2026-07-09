@@ -114,6 +114,10 @@ app.patch('/movies/:id', (req, res) => {
 
 const PORT = process.env.PORT ?? 1234
 
-app.listen(PORT, () => {
-  console.log(`server listening on port http://localhost:${PORT}`)
-})
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server listening on http://localhost:${PORT}`)
+  })
+}
+
+module.exports = app
