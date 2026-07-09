@@ -1,5 +1,6 @@
 const express = require('express')
 const crypto = require('node:crypto')
+const path = require('node:path')
 const cors = require('cors')
 
 const movies = require('./movies.json')
@@ -7,6 +8,7 @@ const { validateMovie, validatePartialMovie } = require('./schemas/movies')
 
 const app = express()
 app.use(express.json())
+app.use(express.static(path.join(__dirname, 'web')))
 app.use(cors({
   origin: (origin, callback) => {
     const ACCEPTED_ORIGINS = [
@@ -17,6 +19,10 @@ app.use(cors({
     ]
 
     if (ACCEPTED_ORIGINS.includes(origin)) {
+      return callback(null, true)
+    }
+
+    if (process.env.VERCEL) {
       return callback(null, true)
     }
 
@@ -116,7 +122,7 @@ const PORT = process.env.PORT ?? 1234
 
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
-    console.log(`Server listening on http://localhost:${PORT}`)
+    console.log(`server listening on port http://localhost:${PORT}`)
   })
 }
 

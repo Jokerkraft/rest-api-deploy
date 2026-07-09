@@ -22,6 +22,10 @@ app.use(cors({
       return callback(null, true)
     }
 
+    if (process.env.VERCEL) {
+      return callback(null, true)
+    }
+
     if (!origin) {
       return callback(null, true)
     }

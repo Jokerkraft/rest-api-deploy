@@ -18,7 +18,7 @@
       }
     </style>
     <script type="module">
-      fetch("http://localhost:1234/movies")
+      fetch("/movies")
         .then((res) => res.json())
         .then((movies) => {
           const html = movies
@@ -42,7 +42,7 @@
               const article = e.target.closest("article");
               const id = article.dataset.id;
 
-              fetch(`http://localhost:1234/movies/${id}`, {
+              fetch(`/movies/${id}`, {
                 method: "DELETE",
               }).then((res) => {
                 if (res.ok) {
