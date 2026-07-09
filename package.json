@@ -1,0 +1,40 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "El mejor curso de Node gratuito",
+  "keywords": [
+    "curso",
+    "node",
+    "nodejs",
+    "Jokerkraft"
+  ],
+  "homepage": "https://github.com/Jokerkraft/Hello-NodeJS#readme",
+  "bugs": {
+    "url": "https://github.com/Jokerkraft/Hello-NodeJS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jokerkraft/Hello-NodeJS.git"
+  },
+  "license": "ISC",
+  "author": "Oskar Luis Cabrera Chavero - Jokerkraft",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev:1": "nodemon clase-2/00-http.js",
+    "dev:2": "nodemon clase-2/01-routing.js",
+    "dev:3": "node --watch clase-2/pokemon/02-express.js"
+  },
+  "dependencies": {
+    "express": "5.2.1",
+    "picocolors": "1.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.14",
+    "standard": "17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
